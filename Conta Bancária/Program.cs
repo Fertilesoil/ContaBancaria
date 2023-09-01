@@ -10,7 +10,7 @@ namespace Conta_Bancária
             int opcao = 1;
             string sn;
 
-
+            
             Conta conta1 = new Conta(1, 123, 1, "Galhardo", 1000000.00M);
 
             conta1.Visualizar();
@@ -21,12 +21,30 @@ namespace Conta_Bancária
             conta1.Visualizar();
             conta1.Depositar(5000);
             conta1.Visualizar();
+            
 
-        
+            
+            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
+            cc1.Visualizar();
+            cc1.Sacar(2000000.00M);
+            cc1.Visualizar();
+            cc1.Depositar(5000);
+            cc1.Visualizar();
+            
+
+            
+            ContaPoupanca cp2 = new ContaPoupanca(2, 123, 2, "Bucéfalo", 1000000.00M, 25);
+            cp2.Visualizar();
+            cp2.Sacar(2000000.00M);
+            cp2.Visualizar();
+            cp2.Depositar(5000);
+            cp2.Visualizar();
+
+
             while (opcao != 9)
             {
             inicio:
-                Console.Clear();
+                
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("                                                                                       ");
@@ -105,7 +123,6 @@ namespace Conta_Bancária
 
                         if (sn.Equals("nao") || sn.Equals("não") || sn.Equals("n"))
                         {
-
                             goto inicio;
                         }
 

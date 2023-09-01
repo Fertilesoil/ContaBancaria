@@ -26,7 +26,11 @@ namespace Conta_Bancária.Model
             this.saldo = saldo;
         }
 
-      
+        //Polimorfismo de sobrecarga
+        public Conta()
+        {
+            
+        }
 
         // Get exibe os atributos dos meus objetos; SET modifica os valores do meu objeto
         public int GetNumero()
@@ -79,7 +83,7 @@ namespace Conta_Bancária.Model
             this.saldo = saldo;
         }
 
-        public bool Sacar(decimal valor)
+        public virtual bool Sacar(decimal valor)
         {
             if (this.saldo < valor)
             {
@@ -96,7 +100,7 @@ namespace Conta_Bancária.Model
             this.SetSaldo(this.saldo + valor);
         }
 
-        public void Visualizar()
+        public virtual void Visualizar()
         {
             string tipo = string.Empty; 
             switch (this.tipo)
