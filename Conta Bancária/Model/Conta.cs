@@ -26,6 +26,8 @@ namespace Conta_Bancária.Model
             this.saldo = saldo;
         }
 
+      
+
         // Get exibe os atributos dos meus objetos; SET modifica os valores do meu objeto
         public int GetNumero()
         {
