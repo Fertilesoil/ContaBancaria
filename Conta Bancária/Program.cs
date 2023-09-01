@@ -7,8 +7,9 @@ namespace Conta_Bancária
 
         static void Main(string[] args)
         {
-            int opcao = 0;
+            int opcao = 1;
             string sn;
+
 
             Conta conta1 = new Conta(1, 123, 1, "Galhardo", 1000000.00M);
 
@@ -17,20 +18,17 @@ namespace Conta_Bancária
             Console.WriteLine(conta1.GetNumero());
 
             conta1.Sacar(1000);
-
             conta1.Visualizar();
-
-            conta1.Depositar(5000); 
-            
+            conta1.Depositar(5000);
             conta1.Visualizar();
 
         
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            inicio:
             while (opcao != 9)
             {
-            
+            inicio:
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
@@ -57,11 +55,8 @@ namespace Conta_Bancária
                 Console.WriteLine("                           $                                                          $");
                 Console.WriteLine("                           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 opcao = Convert.ToInt32(Console.ReadLine());
-                
-            }
-            
-            
-            
+                Console.Clear();
+
                 switch (opcao)
                 {
                     case 1:
@@ -110,8 +105,10 @@ namespace Conta_Bancária
 
                         if (sn.Equals("nao") || sn.Equals("não") || sn.Equals("n"))
                         {
-                         goto inicio;
+
+                            goto inicio;
                         }
+
                         else
                         {
                             Console.Clear();
@@ -152,9 +149,8 @@ namespace Conta_Bancária
                         Console.ReadKey();
                         break;
                 }
-            
 
-
+            }
 
             static void Sobre()
             {
