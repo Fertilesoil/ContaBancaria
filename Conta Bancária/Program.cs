@@ -4,49 +4,16 @@ namespace Conta_Bancária
 {
     internal class Program
     {
-
-        static void Main(string[] args)
+        static void Menu()
         {
             int opcao = 1;
             string sn;
-
-            
-            Conta conta1 = new Conta(1, 123, 1, "Galhardo", 1000000.00M);
-
-            conta1.Visualizar();
-            conta1.SetNumero(345);
-            Console.WriteLine(conta1.GetNumero());
-
-            conta1.Sacar(1000);
-            conta1.Visualizar();
-            conta1.Depositar(5000);
-            conta1.Visualizar();
-            
-
-            
-            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
-            cc1.Visualizar();
-            cc1.Sacar(2000000.00M);
-            cc1.Visualizar();
-            cc1.Depositar(5000);
-            cc1.Visualizar();
-            
-
-            
-            ContaPoupanca cp2 = new ContaPoupanca(2, 123, 2, "Bucéfalo", 1000000.00M, 25);
-            cp2.Visualizar();
-            cp2.Sacar(2000000.00M);
-            cp2.Visualizar();
-            cp2.Depositar(5000);
-            cp2.Visualizar();
-
-
             while (opcao != 9)
             {
-            inicio:
-                
+
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.Clear();
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
@@ -78,7 +45,7 @@ namespace Conta_Bancária
                 switch (opcao)
                 {
                     case 1:
-                        Console.WriteLine("Criar Conta: ");
+                        Console.WriteLine("Digite o número da sua conta: ");
                         Console.ReadKey();
                         break;
 
@@ -116,14 +83,14 @@ namespace Conta_Bancária
                         Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
                         Console.WriteLine("                          +<><>                                                   <><>+");
                         Console.WriteLine("                          +<><>      Você deseja realmente sair do programa ?     <><>+");
-                        Console.WriteLine("                          +<><>      [Sim]              ||              [Não]     <><>+");
+                        Console.WriteLine("                          +<><>      [S]                ||                [N]     <><>+");
                         Console.WriteLine("                          +<><>                                                   <><>+");
                         Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
                         sn = (Console.ReadLine())!.ToLower();
 
-                        if (sn.Equals("nao") || sn.Equals("não") || sn.Equals("n"))
+                        if (sn.Equals("n"))
                         {
-                            goto inicio;
+                            Menu();
                         }
 
                         else
@@ -198,6 +165,40 @@ namespace Conta_Bancária
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
             }
+        }
+
+        static void Main(string[] args)
+        {
+            Conta conta1 = new Conta(1, 123, 1, "Galhardo", 1000000.00M);
+
+            conta1.Visualizar();
+            conta1.SetNumero(345);
+            Console.WriteLine(conta1.GetNumero());
+
+            conta1.Sacar(1000);
+            conta1.Visualizar();
+            conta1.Depositar(5000);
+            conta1.Visualizar();
+            
+
+            
+            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
+            cc1.Visualizar();
+            cc1.Sacar(2000000.00M);
+            cc1.Visualizar();
+            cc1.Depositar(5000);
+            cc1.Visualizar();
+            
+
+            
+            ContaPoupanca cp2 = new ContaPoupanca(2, 123, 2, "Bucéfalo", 1000000.00M, 25);
+            cp2.Visualizar();
+            cp2.Sacar(2000000.00M);
+            cp2.Visualizar();
+            cp2.Depositar(5000);
+            cp2.Visualizar();
+
+            Menu();
         }
     }
 }
