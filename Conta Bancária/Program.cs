@@ -1,19 +1,35 @@
-﻿using Conta_Bancária.Model;
+﻿using Conta_Bancária.Controller;
+using Conta_Bancária.Model;
+using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
 
 namespace Conta_Bancária
 {
-    internal class Program
+    public class Program
     {
         static void Menu()
         {
             int opcao = 1;
-            string sn;
+            string sn, titular;
+            int agencia = 0, tipo, aniversario;
+            decimal saldo, limite;
+
+            ContaController contas = new();
+
+
+            ContaCorrente cc1 = new ContaCorrente(contas.GerarNumero(), 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
+            contas.Cadastrar(cc1);
+
+            ContaPoupanca cp2 = new ContaPoupanca(contas.GerarNumero(), 123, 2, "Bucéfalo", 1000000.00M, 25);
+            contas.Cadastrar(cp2);
+
+
             while (opcao != 9)
             {
-
+            
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                
+
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
@@ -45,11 +61,44 @@ namespace Conta_Bancária
                 switch (opcao)
                 {
                     case 1:
-                        Console.WriteLine("Digite o número da sua conta: ");
-                        Console.ReadKey();
+                        Console.WriteLine("Digite o número da agência: ");
+                        agencia = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Digite o nome do titular: ");
+                        titular = Console.ReadLine()!;
+
+                        Console.WriteLine("Digite o saldo da conta: ");
+                        saldo = Convert.ToDecimal(Console.ReadLine());
+
+                        do
+                        {
+                            Console.WriteLine("Digite o tipo da conta: ");
+                            tipo = Convert.ToInt32(Console.ReadLine());
+                        } while (tipo != 1 && tipo != 2);
+
+
+                        switch (tipo)
+                        {
+                            case 1:
+                                Console.WriteLine("Digite o limite da conta: ");
+                                limite = Convert.ToDecimal(Console.ReadLine());
+
+                                contas.Cadastrar(new ContaCorrente(contas.GerarNumero(), agencia, tipo, titular, saldo, limite));
+                                break;
+
+                            case 2:
+                                Console.WriteLine("Digite o aniversario da conta: ");
+                                aniversario = Convert.ToInt32(Console.ReadLine());
+
+                                contas.Cadastrar(new ContaPoupanca(contas.GerarNumero(), agencia, tipo, titular, saldo, aniversario));
+                                break;
+                        }
                         break;
 
                     case 2:
+
+                        Console.WriteLine("Listar todas as contas: ");
+                        contas.ListarTodas();
                         break;
 
                     case 3:
@@ -135,8 +184,9 @@ namespace Conta_Bancária
                 }
 
             }
+        }
 
-            static void Sobre()
+        static void Sobre()
             {
                 Console.Clear();
                 Console.WriteLine("                                                                                       ");
@@ -165,28 +215,11 @@ namespace Conta_Bancária
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
             }
-        }
 
         static void Main(string[] args)
         {
-       
-            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
-            cc1.Visualizar();
-            cc1.Sacar(2000000.00M);
-            cc1.Visualizar();
-            cc1.Depositar(5000);
-            cc1.Visualizar();
-            
-
-            
-            ContaPoupanca cp2 = new ContaPoupanca(2, 123, 2, "Bucéfalo", 1000000.00M, 25);
-            cp2.Visualizar();
-            cp2.Sacar(2000000.00M);
-            cp2.Visualizar();
-            cp2.Depositar(5000);
-            cp2.Visualizar();
-
             Menu();
         }
+        
     }
 }
