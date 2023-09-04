@@ -169,22 +169,6 @@ namespace Conta_Bancária
 
         static void Main(string[] args)
         {
-       
-            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
-            cc1.Visualizar();
-            cc1.Sacar(2000000.00M);
-            cc1.Visualizar();
-            cc1.Depositar(5000);
-            cc1.Visualizar();
-            
-
-            
-            ContaPoupanca cp2 = new ContaPoupanca(2, 123, 2, "Bucéfalo", 1000000.00M, 25);
-            cp2.Visualizar();
-            cp2.Sacar(2000000.00M);
-            cp2.Visualizar();
-            cp2.Depositar(5000);
-            cp2.Visualizar();
 
             Menu();
         }
