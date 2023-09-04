@@ -13,7 +13,7 @@ namespace Conta_Bancária
 
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Clear();
+                
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                                                                                       ");
@@ -169,19 +169,7 @@ namespace Conta_Bancária
 
         static void Main(string[] args)
         {
-            Conta conta1 = new Conta(1, 123, 1, "Galhardo", 1000000.00M);
-
-            conta1.Visualizar();
-            conta1.SetNumero(345);
-            Console.WriteLine(conta1.GetNumero());
-
-            conta1.Sacar(1000);
-            conta1.Visualizar();
-            conta1.Depositar(5000);
-            conta1.Visualizar();
-            
-
-            
+       
             ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
             cc1.Visualizar();
             cc1.Sacar(2000000.00M);

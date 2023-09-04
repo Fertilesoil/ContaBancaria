@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
       "projectName": "Conta Bancária",
-      "projectPath": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

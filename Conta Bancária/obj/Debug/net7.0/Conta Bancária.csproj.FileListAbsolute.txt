@@ -12,3 +12,17 @@ C:\Users\user\Desktop\Conta Bancária\Conta Bancária\obj\Debug\net7.0\refint\Co
 C:\Users\user\Desktop\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.pdb
 C:\Users\user\Desktop\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.genruntimeconfig.cache
 C:\Users\user\Desktop\Conta Bancária\Conta Bancária\obj\Debug\net7.0\ref\Conta Bancária.dll
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.AssemblyInfo.cs
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.dll
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\refint\Conta Bancária.dll
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.pdb
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\bin\Debug\net7.0\Conta Bancária.exe
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\bin\Debug\net7.0\Conta Bancária.deps.json
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\bin\Debug\net7.0\Conta Bancária.runtimeconfig.json
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\bin\Debug\net7.0\Conta Bancária.dll
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\bin\Debug\net7.0\Conta Bancária.pdb
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\Conta Bancária.genruntimeconfig.cache
+C:\Users\user\Desktop\Proramação\Conta Bancária\Conta Bancária\obj\Debug\net7.0\ref\Conta Bancária.dll

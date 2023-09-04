@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj": {}
+    "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj": {
+    "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
         "projectName": "Conta Bancária",
-        "projectPath": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\Conta Bancária.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Conta Bancária\\Conta Bancária\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Proramação\\Conta Bancária\\Conta Bancária\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
