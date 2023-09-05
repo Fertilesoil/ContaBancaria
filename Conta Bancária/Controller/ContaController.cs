@@ -3,6 +3,7 @@ using Conta_Bancária.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,24 @@ namespace Conta_Bancária.Controller
         // Métodos Crud
         public void Atualizar(Conta conta)
         {
-            throw new NotImplementedException();
+            var buscaConta = BuscarNaCollection(conta.GetNumero());
+            if (buscaConta != null)
+            {
+            var index = ListaContas.IndexOf(buscaConta);
+            ListaContas[index] = conta;
+            Console.WriteLine($"A conta {conta.GetNumero()} foi atualizada com sucesso !!");
+            }
+            
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
 
         public void Cadastrar(Conta conta)
@@ -28,7 +46,24 @@ namespace Conta_Bancária.Controller
 
         public void Deletar(int numero)
         {
-            throw new NotImplementedException();
+
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+            {
+                if (ListaContas.Remove(conta) == true)
+                Console.WriteLine($"A conta {numero} foi apagada com sucesso");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                           +");
+                Console.WriteLine("\t                           +              A conta {0} não foi encontrada!                                    +", numero);
+                Console.WriteLine("                           +                                                           +");
+                Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
         public void ListarTodas()
         {
@@ -37,7 +72,20 @@ namespace Conta_Bancária.Controller
         }
         public void ProcurarPorNumero(int numero)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+                conta.Visualizar();
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
 
         // Métodos Bancários
@@ -62,6 +110,17 @@ namespace Conta_Bancária.Controller
             return ++numero;
         }
 
+        // Método para buscar um objeto Conta através do número da conta
+        public Conta? BuscarNaCollection(int numero)
+        {
+            foreach (var conta in ListaContas)
+            {
+                if (conta.GetNumero() == numero)
+                    return conta;
+            }
+            return null;
+        }
 
+        
     }
 }
