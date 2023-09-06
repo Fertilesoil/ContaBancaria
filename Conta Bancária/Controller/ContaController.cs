@@ -21,11 +21,11 @@ namespace Conta_Bancária.Controller
             var buscaConta = BuscarNaCollection(conta.GetNumero());
             if (buscaConta != null)
             {
-            var index = ListaContas.IndexOf(buscaConta);
-            ListaContas[index] = conta;
-            Console.WriteLine($"A conta {conta.GetNumero()} foi atualizada com sucesso !!");
+                var index = ListaContas.IndexOf(buscaConta);
+                ListaContas[index] = conta;
+                Console.WriteLine($"A conta {conta.GetNumero()} foi atualizada com sucesso !!");
             }
-            
+
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -52,7 +52,7 @@ namespace Conta_Bancária.Controller
             if (conta is not null)
             {
                 if (ListaContas.Remove(conta) == true)
-                Console.WriteLine($"A conta {numero} foi apagada com sucesso");
+                    Console.WriteLine($"A conta {numero} foi apagada com sucesso");
             }
             else
             {
@@ -67,8 +67,8 @@ namespace Conta_Bancária.Controller
         }
         public void ListarTodas()
         {
-            foreach(var conta in ListaContas)
-                { conta.Visualizar(); }
+            foreach (var conta in ListaContas)
+            { conta.Visualizar(); }
         }
         public void ProcurarPorNumero(int numero)
         {
@@ -91,17 +91,69 @@ namespace Conta_Bancária.Controller
         // Métodos Bancários
         public void Sacar(int numero, decimal valor)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+            {
+                if (conta.Sacar(valor) == true)
+                    Console.WriteLine($"O saque na conta {numero} foi efetuado com sucesso!!");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
 
         public void Depositar(int numero, decimal valor)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+            {
+                conta.Depositar(valor);
+                Console.WriteLine($"O depósito na conta {numero} foi efetuado com sucesso!!");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
 
         public void Transferir(int numeroOrigem, int numeroDestino, decimal valor)
         {
-            throw new NotImplementedException();
+            var contaOrigem = BuscarNaCollection(numeroOrigem);
+            var contaDestino = BuscarNaCollection(numeroDestino);
+
+            if (contaOrigem is not null && contaDestino is not null)
+            {
+                if (contaOrigem.Sacar(valor) == true) 
+                {
+                    contaDestino.Depositar(valor);
+                }
+                    Console.WriteLine($"A transferencia na conta foi efetuado com sucesso!!");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine($"                          +            Uma das contas não foram encontradas          +");
+                Console.WriteLine("                           +                                                          +");
+                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.ResetColor();
+            }
         }
 
         // Métodos Auxiliares
@@ -121,6 +173,5 @@ namespace Conta_Bancária.Controller
             return null;
         }
 
-        
     }
 }
