@@ -1,6 +1,7 @@
 ﻿using Conta_Bancária.Controller;
 using Conta_Bancária.Model;
 using System.ComponentModel.Design;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace Conta_Bancária
@@ -17,14 +18,6 @@ namespace Conta_Bancária
 
             ContaController contas = new();
 
-
-            ContaCorrente cc1 = new ContaCorrente(contas.GerarNumero(), 123, 1, "Bucéfalo", 1000000.00M, 1000.00M);
-            contas.Cadastrar(cc1);
-
-            ContaPoupanca cp2 = new ContaPoupanca(contas.GerarNumero(), 123, 2, "Bucéfalo", 1000000.00M, 25);
-            contas.Cadastrar(cp2);
-
-
             while (opcao != 9)
             {
 
@@ -36,7 +29,7 @@ namespace Conta_Bancária
                 Console.WriteLine("                                                                                       ");
                 Console.WriteLine("                           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 Console.WriteLine("                           $                                                          $");
-                Console.WriteLine("                           $     *****            Banco Dawn Yarn           *****     $");
+                Console.WriteLine("                           $     *****           Banco Dawn Yarn            *****     $");
                 Console.WriteLine("                           $                                                          $");
                 Console.WriteLine("                           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 Console.WriteLine("                           $                                                          $");
@@ -57,12 +50,14 @@ namespace Conta_Bancária
                 Console.WriteLine("                           $                                                          $");
                 Console.WriteLine("                           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
-                // Impedir a digitação de letras
+                Console.ResetColor();
+
                 try
                 {
                     opcao = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
-                } catch (FormatException)
+                }
+                catch (FormatException)
                 {
                     opcao = 0;
                 }
@@ -70,6 +65,10 @@ namespace Conta_Bancária
                 switch (opcao)
                 {
                     case 1:
+
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("Digite o número da agência: ");
                         agencia = Convert.ToInt32(Console.ReadLine());
 
@@ -102,24 +101,40 @@ namespace Conta_Bancária
                                 contas.Cadastrar(new ContaPoupanca(contas.GerarNumero(), agencia, tipo, titular, saldo, aniversario));
                                 break;
                         }
-
                         KeyPress();
+                        Console.ResetColor();
                         break;
 
                     case 2:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("Listar todas as contas: ");
                         contas.ListarTodas();
+
+                        KeyPress();
+                        Console.ResetColor();
                         break;
 
                     case 3:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("Consultar a conta por número");
                         Console.Write("Digite o número: ");
                         numero = Convert.ToInt32(Console.ReadLine());
+
                         contas.ProcurarPorNumero(numero);
+
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 4:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.Write("Digite o número da conta: ");
                         numero = Convert.ToInt32(Console.ReadLine());
 
@@ -159,66 +174,104 @@ namespace Conta_Bancária
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                            Console.WriteLine("                           +                                                           +");
-                            Console.WriteLine("                           +              A conta {0} não foi encontrada!                +", numero);
-                            Console.WriteLine("                           +                                                           +");
-                            Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                            Console.ResetColor();
+
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                           #############################################################");
+                            Console.WriteLine("                           #<><>                                                   <><>#");
+                            Console.WriteLine("                           #><---          A conta {0} não foi encontrada!          ---><#", numero);
+                            Console.WriteLine("                           #<><>                                                   <><>#");
+                            Console.WriteLine("                           #############################################################");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
                         }
 
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 5:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("Deletar uma conta");
                         Console.Write("Digite o número: ");
                         numero = Convert.ToInt32(Console.ReadLine());
                         contas.Deletar(numero);
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 6:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.Write("Digite o número da conta: ");
                         numero = Convert.ToInt32(Console.ReadLine());
-                        
+
 
                         Console.WriteLine("Digite o valor do saque: ");
                         valor = Convert.ToDecimal(Console.ReadLine());
 
                         contas.Sacar(numero, valor);
+
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 7:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.Write("Digite o número da conta: ");
                         numero = Convert.ToInt32(Console.ReadLine());
-                        
+
 
                         Console.WriteLine("Digite o valor do depósito: ");
                         valor = Convert.ToDecimal(Console.ReadLine());
 
                         contas.Depositar(numero, valor);
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 8:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.Write("Digite o número da conta de origem: ");
                         numero = Convert.ToInt32(Console.ReadLine());
-                        
-                        
+
+
                         Console.Write("Digite o número da conta de destino: ");
                         numeroDestino = Convert.ToInt32(Console.ReadLine());
-                        
+
 
                         Console.WriteLine("Digite o valor da tranferência: ");
                         valor = Convert.ToDecimal(Console.ReadLine());
 
-                        contas.Transferir(numero, numeroDestino ,valor);
+                        contas.Transferir(numero, numeroDestino, valor);
                         KeyPress();
+
+                        Console.ResetColor();
                         break;
 
                     case 9:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                                                                                       ");
@@ -255,15 +308,25 @@ namespace Conta_Bancária
                             Console.WriteLine("                                                                                       ");
                             Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
                             Console.WriteLine("                          +<><>                                                   <><>+");
-                            Console.WriteLine("                          +<><>            Obrigado por usar nosso banco!         <><>+");
+                            Console.WriteLine("                          +<><>           Obrigado escolher o Dawn Yarn!          <><>+");
                             Console.WriteLine("                          +<><>                                                   <><>+");
                             Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
-                            Console.ReadKey();
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                                                                       ");
+                            KeyPress();
                             Sobre();
+                            Console.ResetColor();
                         }
                         break;
 
                     default:
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                                                                                       ");
@@ -278,8 +341,18 @@ namespace Conta_Bancária
                         Console.WriteLine("                          +<><>             Essa opção não existe amigue!         <><>+");
                         Console.WriteLine("                          +<><>                                                   <><>+");
                         Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
-                        Console.ReadKey();
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        KeyPress();
+                        Console.ResetColor();
                         break;
+
+
+
                 }
 
             }

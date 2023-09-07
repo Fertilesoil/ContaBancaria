@@ -29,7 +29,7 @@ namespace Conta_Bancária.Model
         //Polimorfismo de sobrecarga
         public Conta()
         {
-            
+
         }
 
         // Get exibe os atributos dos meus objetos; SET modifica os valores do meu objeto
@@ -102,7 +102,7 @@ namespace Conta_Bancária.Model
 
         public virtual void Visualizar()
         {
-            string tipo = string.Empty; 
+            string tipo = string.Empty;
             switch (this.tipo)
             {
                 case 1:
@@ -111,7 +111,7 @@ namespace Conta_Bancária.Model
 
                 case 2:
                     tipo = "Conta Poupança;";
-                     break;
+                    break;
             }
             Console.WriteLine("**********************************************");
             Console.WriteLine("Dados da Conta");
