@@ -308,7 +308,7 @@ namespace Conta_Bancária
                             Console.WriteLine("                                                                                       ");
                             Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
                             Console.WriteLine("                          +<><>                                                   <><>+");
-                            Console.WriteLine("                          +<><>           Obrigado escolher o Dawn Yarn!          <><>+");
+                            Console.WriteLine("                          +<><>        Obrigade por escolher o Dawn Yarn!º        <><>+");
                             Console.WriteLine("                          +<><>                                                   <><>+");
                             Console.WriteLine("                          +<><><><><><><><><><><><><*******><><><><><><><><><><><><><>+");
                             Console.WriteLine("                                                                                       ");
