@@ -29,11 +29,23 @@ namespace Conta_Bancária.Controller
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #><---          A conta {0} não foi encontrada!          ---><#", numero);
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
                 Console.ResetColor();
             }
         }
@@ -57,12 +69,23 @@ namespace Conta_Bancária.Controller
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("                           +                                                           +");
-                Console.WriteLine("\t                           +              A conta {0} não foi encontrada!                                    +", numero);
-                Console.WriteLine("                           +                                                           +");
-                Console.WriteLine("                           +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.ResetColor();
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #><---          A conta {0} não foi encontrada!          ---><#", numero);
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
             }
         }
         public void ListarTodas()
@@ -112,12 +135,23 @@ namespace Conta_Bancária.Controller
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.ResetColor();
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #><---          A conta {0} não foi encontrada!          ---><#", numero);
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
             }
         }
 
@@ -133,12 +167,23 @@ namespace Conta_Bancária.Controller
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine($"                          +             A conta {numero} não foi encontrada!         +");
-                Console.WriteLine("                           +                                                          +");
-                Console.WriteLine("                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.ResetColor();
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #><---          A conta {0} não foi encontrada!         ---><#", numero);
+                Console.WriteLine("                           #<><>                                                   <><>#");
+                Console.WriteLine("                           #############################################################");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                                                                       ");
             }
         }
 
